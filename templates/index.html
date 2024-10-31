@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="myApp">Movie Aura</h1>
+        <h2 class="get">Get the best movie recommendations here</h2>
+        <form action="/recommend" method="POST">
+            <input class="movie" type="text" name="movie" placeholder="Enter a movie name" required>
+            <button class="aura" type="submit">Get Recommendations</button>
+        </form>
+        <a href="/"></a>
+        {% if movie %}
+        <h2>Recommendations for "{{ movie }}"</h2>
+        <ul class="try">
+            {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
+                                        This is my html and flask
